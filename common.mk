@@ -36,6 +36,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/95runtrim:system/etc/init.d/95runtrim
 
+# zRam
+PRODUCT_COPY_FILES += \
+	$(COMMON_PATH)/configs/02zram:system/etc/init.d/02zram
+
 # Enable KSM
 # PRODUCT_COPY_FILES += \
 #	$(COMMON_PATH)/configs/01ksm:system/etc/init.d/01ksm
