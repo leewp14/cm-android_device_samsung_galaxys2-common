@@ -16,25 +16,14 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string-array name="mdnie_scenario_entries">
-    <item>CyanogenMod (ilkin)</item>
-    <item>İstifadәçi İnterfeysi</item>
-    <item>Video</item>
-    <item>Video isti</item>
-    <item>Video soyuq</item>
-    <item>Kamera</item>
-    <item>Naviqasiya</item>
-    <item>Qalereya</item>
-    <item>VT</item>
-  </string-array>
-  <string-array name="mdnie_mode_entries">
-    <item>Dinamik (ilkin)</item>
-    <item>Standart</item>
-    <item>Tәbii</item>
-    <item>Film</item>
-  </string-array>
-  <string-array name="mdnie_negative_entries">
-    <item>Normal</item>
-    <item>Tərsinə çevrilmiş</item>
-  </string-array>
+  <string name="app_name">Ajustes avanzados</string>
+  <string name="defaults_button">Restablecer</string>
+  <string name="category_screen_title">Pantalla</string>
+  <string name="screen_colors_title">Colores</string>
+  <string name="mdnie_scenario_title_head">Escenario</string>
+  <string name="mdnie_scenario_summary_head">Establecer escenario mDNIe</string>
+  <string name="mdnie_mode_title_head">Modo</string>
+  <string name="mdnie_mode_summary_head">Establecer modo mDNIe</string>
+  <string name="mdnie_negative_title_head">Modo Negativo</string>
+  <string name="mdnie_negative_summary_head">Habilitar/deshabilitar colores invertidos</string>
 </resources>

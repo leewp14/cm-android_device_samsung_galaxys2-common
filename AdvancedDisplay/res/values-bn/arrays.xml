@@ -17,24 +17,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string-array name="mdnie_scenario_entries">
-    <item>CyanogenMod (ilkin)</item>
-    <item>İstifadәçi İnterfeysi</item>
-    <item>Video</item>
-    <item>Video isti</item>
-    <item>Video soyuq</item>
-    <item>Kamera</item>
-    <item>Naviqasiya</item>
-    <item>Qalereya</item>
+    <item>সায়ানোজেনমড (পূর্ব-নির্ধারিত)</item>
+    <item>ইউআই</item>
+    <item>ভিডিও</item>
+    <item>ভিডিও উষ্ণ</item>
+    <item>ভিডিও শীতল</item>
+    <item>ক্যামেরা</item>
+    <item>পরিভ্রমণ</item>
+    <item>সংগ্রহশালা</item>
     <item>VT</item>
   </string-array>
   <string-array name="mdnie_mode_entries">
-    <item>Dinamik (ilkin)</item>
-    <item>Standart</item>
-    <item>Tәbii</item>
-    <item>Film</item>
+    <item>গতিশীল (পূর্ব-নির্ধারিত)</item>
+    <item>আদর্শ</item>
+    <item>প্রাকৃতিক</item>
+    <item>চলচ্চিত্র</item>
   </string-array>
   <string-array name="mdnie_negative_entries">
-    <item>Normal</item>
-    <item>Tərsinə çevrilmiş</item>
+    <item>স্বাভাবিক</item>
+    <item>বিপর্যস্ত</item>
   </string-array>
 </resources>
