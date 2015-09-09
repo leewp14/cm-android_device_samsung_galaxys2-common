@@ -18,7 +18,7 @@ COMMON_PATH := device/samsung/galaxys2-common
 DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlay
 
 # Rootdir
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/fstab.smdk4210:root/fstab.smdk4210 \
     $(COMMON_PATH)/rootdir/lpm.rc:root/lpm.rc \
     $(COMMON_PATH)/rootdir/init.smdk4210.usb.rc:root/init.smdk4210.usb.rc \
@@ -33,6 +33,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/98netflix:system/etc/init.d/98netflix
 
+# Check if user want to trim free space
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/95runtrim:system/etc/init.d/95runtrim
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/tinyalsa-audio.xml:system/etc/tinyalsa-audio.xml \
@@ -45,7 +49,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15
+    wifi.supplicant_scan_interval=20
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 
@@ -55,7 +59,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf
 
 # Packages
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     SamsungServiceMode \
     Torch
@@ -80,6 +84,10 @@ PRODUCT_PACKAGES += \
     libs5pjpeg \
     libfimg \
     libsecion
+
+# excluded-input-devices
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
 
 # Charger
 PRODUCT_PACKAGES += \
