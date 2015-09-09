@@ -436,3 +436,10 @@ on property:init.svc.bootanim=stopped
 	chmod 0664 /sys/module/lowmemorykiller/parameters/adj
 	chmod 0664 /sys/module/lowmemorykiller/parameters/minfree
 	write /sys/module/lowmemorykiller/parameters/minfree 7168,10240,18432,23040,26624,32000
+	chown media_rw media_rw /mnt/media_rw/sdcard0
+	chown media_rw media_rw /mnt/media_rw/sdcard1
+	chown media_rw media_rw /mnt/media_rw/usbdisk0
+	chmod 0770 /mnt/media_rw/sdcard0
+	chmod 0770 /mnt/media_rw/sdcard1
+	chmod 0770 /mnt/media_rw/usbdisk0
+
