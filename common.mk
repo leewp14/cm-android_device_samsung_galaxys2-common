@@ -190,7 +190,17 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+# $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+
+# Custom dalvik.vm values
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=6m \
+    dalvik.vm.heapgrowthlimit=64m \
+    dalvik.vm.heapsize=160m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=1m \
+    dalvik.vm.heapmaxfree=4m
+
 
 # Include exynos4 platform specific parts
 TARGET_HAL_PATH := hardware/samsung/exynos4/hal
