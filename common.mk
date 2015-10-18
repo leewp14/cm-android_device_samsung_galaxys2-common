@@ -229,7 +229,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=160m \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=1m \
-    dalvik.vm.heapmaxfree=4m
+    dalvik.vm.heapmaxfree=4m \
+	dalvik.vm.dex2oat-flags=--no-watch-dog
 
 
 # Include exynos4 platform specific parts
