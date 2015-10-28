@@ -34,6 +34,9 @@ on init
 
 on fs
     mount_all /fstab.smdk4210
+    swapon_all /fstab.smdk4210
+    write /proc/sys/vm/page-cluster 1
+    write /proc/sys/vm/swappiness 60
 
     mkdir /efs/bluetooth
     mkdir /efs/wifi
