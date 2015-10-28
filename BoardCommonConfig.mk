@@ -28,7 +28,6 @@ TARGET_ARCH_VARIANT_CPU := cortex-a9
 TARGET_CPU_VARIANT := cortex-a9
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
-EXYNOS4_ENHANCEMENTS := true
 EXYNOS4210_ENHANCEMENTS := true
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
@@ -212,12 +211,10 @@ RECOVERY_FSTAB_VERSION := 2
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2-common/include
 
 # Charging mode
-BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 BOARD_BATTERY_DEVICE_NAME := "battery"
 BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_CHARGER_RES := device/samsung/galaxys2-common/res/charger
-
+BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys2-common/shbootimg.mk
 
 # Override healthd HAL
