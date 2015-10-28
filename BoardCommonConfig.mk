@@ -180,7 +180,9 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     file_contexts \
     gpsd.te \
+    healthd.te \
     init.te \
+    kernel.te \
     mediaserver.te \
     netd.te \
     rild.te \
