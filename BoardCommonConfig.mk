@@ -56,8 +56,7 @@ BOARD_NAND_PAGE_SIZE := 4096
 BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x40000000
-BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0 androidboot.selinux=permissive
-
+BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
