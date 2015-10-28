@@ -17,24 +17,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string-array name="mdnie_scenario_entries">
-    <item>CyanogenMod (standard)</item>
+    <item>CyanogenMod (privzeti)</item>
     <item>UI</item>
-    <item>Video</item>
-    <item>Video varme</item>
-    <item>Video kulde</item>
-    <item>Kamera</item>
-    <item>Navigasjon</item>
-    <item>Galleri</item>
+    <item>Video posnetek</item>
+    <item>Topel video posnetek</item>
+    <item>Hladen video posnetek</item>
+    <item>Fotoaparat</item>
+    <item>Navigacija</item>
+    <item>Galerija</item>
     <item>VT</item>
   </string-array>
   <string-array name="mdnie_mode_entries">
-    <item>Dynamisk (standard)</item>
-    <item>Standard</item>
-    <item>Naturlig</item>
+    <item>Dinamično (privzeto)</item>
+    <item>Običajni</item>
+    <item>Naravni</item>
     <item>Film</item>
   </string-array>
   <string-array name="mdnie_negative_entries">
-    <item>Normal</item>
-    <item>Invertert</item>
+    <item>Običajno</item>
+    <item>Obrnjeno</item>
   </string-array>
 </resources>

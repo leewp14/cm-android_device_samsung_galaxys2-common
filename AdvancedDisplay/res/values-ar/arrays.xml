@@ -17,20 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string-array name="mdnie_scenario_entries">
-    <item>CyanogenMod (الافتراضي)</item>
+    <item>CyanogenMod (الإفتراضي)</item>
     <item>واجهة المستخدم</item>
     <item>فيديو</item>
-    <item>فيديو حار</item>
+    <item>فيديو دافئ</item>
     <item>فيديو بارد</item>
     <item>الكاميرا</item>
     <item>الملاحة</item>
-    <item>المعرض</item>
+    <item>معرض الصور</item>
     <item>VT</item>
   </string-array>
   <string-array name="mdnie_mode_entries">
-    <item>ديناميكية (افتراضي)</item>
-    <item>قياسى</item>
-    <item>الطبيعية</item>
+    <item>ديناميكي (افتراضي)</item>
+    <item>قياسي</item>
+    <item>طبيعي</item>
     <item>فيلم</item>
   </string-array>
   <string-array name="mdnie_negative_entries">

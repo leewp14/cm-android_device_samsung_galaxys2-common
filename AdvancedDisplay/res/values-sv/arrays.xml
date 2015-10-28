@@ -20,21 +20,21 @@
     <item>CyanogenMod (standard)</item>
     <item>UI</item>
     <item>Video</item>
-    <item>Video varm</item>
-    <item>Video kall</item>
+    <item>Varm video</item>
+    <item>Kall video</item>
     <item>Kamera</item>
     <item>Navigering</item>
     <item>Galleri</item>
     <item>VT</item>
   </string-array>
   <string-array name="mdnie_mode_entries">
-    <item>Dynamisk (standard)</item>
+    <item>Dynamic (default)</item>
     <item>Standard</item>
     <item>Naturlig</item>
     <item>Film</item>
   </string-array>
   <string-array name="mdnie_negative_entries">
     <item>Normal</item>
-    <item>Inverterad</item>
+    <item>Inverted</item>
   </string-array>
 </resources>

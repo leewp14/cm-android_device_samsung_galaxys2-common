@@ -25,16 +25,16 @@
     <item>Fotoaparát</item>
     <item>Navigácia</item>
     <item>Galéria</item>
-    <item>Prenos videa</item>
+    <item>VT</item>
   </string-array>
   <string-array name="mdnie_mode_entries">
     <item>Dynamický (predvolené)</item>
-    <item>Štandardný</item>
-    <item>Prírodný</item>
+    <item>Štandardné</item>
+    <item>Prirodzené</item>
     <item>Film</item>
   </string-array>
   <string-array name="mdnie_negative_entries">
-    <item>Normálny</item>
-    <item>Obrátený</item>
+    <item>Normálne</item>
+    <item>Obrátené</item>
   </string-array>
 </resources>

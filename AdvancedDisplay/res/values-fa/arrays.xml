@@ -16,14 +16,25 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Išplėstinis ekranas</string>
-  <string name="defaults_button">Atkurti į numatytuosius</string>
-  <string name="category_screen_title">Ekranas</string>
-  <string name="screen_colors_title">Spalvos</string>
-  <string name="mdnie_scenario_title_head">Scenarijus</string>
-  <string name="mdnie_scenario_summary_head">Nustatyti mDNIe scenarijų</string>
-  <string name="mdnie_mode_title_head">Režimas</string>
-  <string name="mdnie_mode_summary_head">Nustatyti mDNIe režimą</string>
-  <string name="mdnie_negative_title_head">Negatyvus režimas</string>
-  <string name="mdnie_negative_summary_head">Įjungti / išjungti apverstas spalvas</string>
+  <string-array name="mdnie_scenario_entries">
+    <item>سایانوژن‌مود (پیش‌فرض)</item>
+    <item>رابط کاربر</item>
+    <item>ویدیو</item>
+    <item>تصویری گرم</item>
+    <item>تصویری سرد</item>
+    <item>دوربین</item>
+    <item>پیمایش</item>
+    <item>گالری</item>
+    <item>VT</item>
+  </string-array>
+  <string-array name="mdnie_mode_entries">
+    <item>پویا (پیش‌فرض)</item>
+    <item>استاندارد</item>
+    <item>طبیعی</item>
+    <item>فیلم</item>
+  </string-array>
+  <string-array name="mdnie_negative_entries">
+    <item>عادی</item>
+    <item>معکوس</item>
+  </string-array>
 </resources>

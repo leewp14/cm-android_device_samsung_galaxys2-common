@@ -16,8 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Paramètres d\'écran</string>
-  <string name="defaults_button">Réinitialiser</string>
+  <string name="app_name">Affichage avancé</string>
+  <string name="defaults_button">Réinitialiser par défaut</string>
   <string name="category_screen_title">Écran</string>
   <string name="screen_colors_title">Couleurs</string>
   <string name="mdnie_scenario_title_head">Scénario</string>
