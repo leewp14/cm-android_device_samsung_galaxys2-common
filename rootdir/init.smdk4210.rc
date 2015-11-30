@@ -8,7 +8,7 @@ on init
     # By default, primary storage is physical
     setprop ro.vold.primary_physical 1
 
-
+    export LD_PRELOAD "/system/lib/libsamsung_symbols.so"
 
     mkdir /efs 0771 radio system
     mkdir /preload 0771 system system
