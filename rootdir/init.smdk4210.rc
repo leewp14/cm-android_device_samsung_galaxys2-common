@@ -16,12 +16,10 @@ on init
     mkdir /mnt/.lfs 0755 root root
 
     # for backwards compatibility
-   symlink /sdcard /mnt/sdcard
-   symlink /sdcard /storage/sdcard
-   symlink /sdcard /storage/sdcard0
-   # symlink /sdcard1 /storage/sdcard1
-   # symlink /sdcard1 /mnt/extSdCard
-   # symlink /sdcard1 /external_sd
+  symlink /sdcard /mnt/sdcard
+  symlink /storage/sdcard1 /sdcard1 
+  symlink /storage/sdcard1 /mnt/extSdCard
+  symlink /storage/sdcard1 /external_sd
 
 
 # Disable CFQ slice idle delay
