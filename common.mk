@@ -104,6 +104,7 @@ PRODUCT_PACKAGES += \
 # OMX
 PRODUCT_PACKAGES += \
     libstagefrighthw \
+	libstagefright_soft_flacdec \
     libseccscapi \
     libsecbasecomponent \
     libsecosal \
