@@ -34,12 +34,12 @@
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">false</bool>
 
+	<!-- dream settings -->
+		<bool name="config_dreamsSupported">true</bool>
+		<bool name="config_dreamsEnabledByDefault">false</bool>
+
 	<!-- Screen brightness when dozing. -->
 		<integer name="config_screenBrightnessDoze">20</integer>
-
-
-		<bool name="config_dreamsSupported">false</bool>
-		<bool name="config_dreamsEnabledByDefault">false</bool>
 
 	<!-- doze settings -->
 		<string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
@@ -210,7 +210,7 @@
     <string name="config_perf_profile_default_entry">1</string>
 
     <!-- Control whether a car dock event should override the default bluetooth
-         audio routing, FORCE_BT_CAR_DOCK, with an analog dock, FORCE_ANALOG_DOCK. -->
+         audio routing, FORCE_BT_CAR_DOCK, with an analog dock, FORCE_ANALOG_DOCK. 
 
-    <bool name="config_forceAnalogCarDock">true</bool>
+    <bool name="config_forceAnalogCarDock">true</bool> -->
 </resources>
