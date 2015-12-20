@@ -124,6 +124,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.render_dirty_regions=false
 
 # RIL
+PRODUCT_PACKAGES += \
+    ril-wrapper
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungExynos4RIL \
     mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1 \
