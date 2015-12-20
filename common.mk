@@ -132,7 +132,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungExynos4RIL \
     mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1 \
     ro.telephony.call_ring.multiple=false \
-    ro.telephony.call_ring.delay=3000
+    ro.telephony.call_ring.delay=3000 \
+	ro.telephony.mms_data_profile=5
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
