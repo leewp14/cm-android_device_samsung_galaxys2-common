@@ -16,25 +16,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string-array name="mdnie_scenario_entries">
-    <item>CyanogenMod (الإفتراضي)</item>
-    <item>واجهة المستخدم</item>
-    <item>فيديو</item>
-    <item>فيديو سريع</item>
-    <item>فيديو بطيء</item>
-    <item>الكاميرا</item>
-    <item>التنقل</item>
-    <item>معرض</item>
-    <item>VT</item>
-  </string-array>
-  <string-array name="mdnie_mode_entries">
-    <item>ديناميكي (افتراضي)</item>
-    <item>قياسي</item>
-    <item>طبيعي</item>
-    <item>فيلم</item>
-  </string-array>
-  <string-array name="mdnie_negative_entries">
-    <item>عادي</item>
-    <item>معكوس</item>
-  </string-array>
+  <string name="defaults_button">Återställ till standard</string>
+  <string name="category_screen_title">Skärm</string>
+  <string name="screen_colors_title">Färger</string>
+  <string name="mdnie_scenario_title_head">Scenario</string>
+  <string name="mdnie_mode_title_head">Läge</string>
 </resources>

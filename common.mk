@@ -84,6 +84,7 @@ PRODUCT_PACKAGES += \
     libfimg \
     libsecion
 
+
 # Charger
 PRODUCT_PACKAGES += \
     charger \
