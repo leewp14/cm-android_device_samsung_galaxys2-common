@@ -86,6 +86,7 @@ const RIL_RadioFunctions* RIL_Init(const struct RIL_Env *env, int argc, char **a
 
 	//copy the real RIL's info struct, then replace the onRequest pointer with our own
 	rilInfo = *mRealRadioFuncs;
+	rilInfo.onRequest = rilOnRequest;
 
 	RLOGD("Wrapped RIL version is '%s'\n", mRealRadioFuncs->getVersion());
 
@@ -96,4 +97,3 @@ out_fail:
 	dlclose(realRilLibHandle);
 	return NULL;
 }
-

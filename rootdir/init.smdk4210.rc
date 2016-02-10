@@ -8,7 +8,7 @@ on init
     # By default, primary storage is physical
     setprop ro.vold.primary_physical 1
 
-	export LD_SHIM_LIBS /system/lib/libril.so|libsamsung_symbols.so
+	export LD_SHIM_LIBS /system/lib/libsec-ril.so|libsamsung_symbols.so
 
     mkdir /efs 0771 radio system
     mkdir /preload 0771 system system
@@ -126,8 +126,8 @@ on post-fs-data
     restorecon_recursive /efs
     
 # MTP Device permission.
-    chmod 0660 /dev/usb_mtp_gadget
-    chown system system /dev/usb_mtp_gadget
+    chmod 0660 /dev/mtp_usb
+    chown system mtp /dev/mtp_usb
 
 # terminal mode
     chmod 0660 /sys/class/android_usb/android0/terminal_version
