@@ -19,10 +19,6 @@ on init
    symlink /sdcard /mnt/sdcard
    symlink /sdcard /storage/sdcard
    symlink /sdcard /storage/sdcard0
-   # symlink /sdcard1 /storage/sdcard1
-   # symlink /sdcard1 /mnt/extSdCard
-   # symlink /sdcard1 /external_sd
-
 
 # Disable CFQ slice idle delay
     write /sys/block/mmcblk0/queue/iosched/slice_idle 0
