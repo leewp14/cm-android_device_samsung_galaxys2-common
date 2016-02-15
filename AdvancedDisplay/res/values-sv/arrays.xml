@@ -28,13 +28,13 @@
     <item>VT</item>
   </string-array>
   <string-array name="mdnie_mode_entries">
-    <item>Dynamic (default)</item>
+    <item>Dynamisk (standard)</item>
     <item>Standard</item>
     <item>Naturlig</item>
     <item>Film</item>
   </string-array>
   <string-array name="mdnie_negative_entries">
     <item>Normal</item>
-    <item>Inverted</item>
+    <item>Inverterad</item>
   </string-array>
 </resources>
