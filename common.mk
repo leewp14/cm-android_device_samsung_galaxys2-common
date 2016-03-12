@@ -33,7 +33,7 @@ PRODUCT_COPY_FILES += \
 
 # Netflix hack
 PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/configs/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video.xml
+	$(COMMON_PATH)/configs/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
