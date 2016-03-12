@@ -33,7 +33,7 @@
             <Limit name="bitrate" range="1-384000" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
-<!-- removed adaptive playback to force netflix using hw codec -->
+<!-- netflix test readd adaptive playback -->
         <MediaCodec name="OMX.google.h264.decoder" type="video/avc">
             <!-- profiles and levels:  ProfileBaseline : Level51 -->
             <Limit name="size" min="2x2" max="2048x2048" />
@@ -42,7 +42,8 @@
             <Limit name="block-count" range="1-8160" />
             <Limit name="blocks-per-second" range="1-489600" />
             <Limit name="bitrate" range="1-40000000" />
-<!-- removed adaptive playback to force netflix using hw codec -->
+            <Feature name="adaptive-playback" />
+<!-- netflix -->
         </MediaCodec>
         <MediaCodec name="OMX.google.hevc.decoder" type="video/hevc">
             <!-- profiles and levels:  ProfileMain : MainTierLevel51 -->
