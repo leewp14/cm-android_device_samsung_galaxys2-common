@@ -89,6 +89,6 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.SEC.AVC.Encoder" type="video/avc" />
         <MediaCodec name="OMX.SEC.M4V.Encoder" type="video/mp4v-es" />
     </Encoders>
-    <Include href="media_codecs_google_video.xml" />
+    <Include href="media_codecs_google_video_le.xml" />
     <Include href="media_codecs_ffmpeg.xml" />
 </MediaCodecs>
