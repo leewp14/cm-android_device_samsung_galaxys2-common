@@ -30,6 +30,21 @@
     <!-- Whether to use cheap, less good looking shadows for recents -->
     <bool name="config_recents_fake_shadows">true</bool>
 
+    <!-- Doze: does this device support STATE_DOZE and STATE_DOZE_SUSPEND?  -->
+    <bool name="doze_display_state_supported">true</bool>
+
+    <!-- Doze: should the significant motion sensor be used as a pulse signal? -->
+    <bool name="doze_pulse_on_significant_motion">false</bool>
+
+    <!-- Doze: pulse parameter - how long does it take to fade in? -->
+    <integer name="doze_pulse_duration_in">900</integer>
+
+    <!-- Doze: pulse parameter - delay to wait for the screen to wake up -->
+    <integer name="doze_pulse_delay_in">200</integer>
+
+    <!-- Doze: pulse parameter - delay to wait for the screen to wake up after a pickup -->
+    <integer name="doze_pulse_delay_in_pickup">200</integer>
+
     <!-- Allow Flashlight service to use wakelock -->
     <bool name="flashlight_use_wakelock">true</bool>
 </resources>

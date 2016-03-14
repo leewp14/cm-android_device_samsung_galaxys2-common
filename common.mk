@@ -162,6 +162,10 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni
 
+# SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # Wifi
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
