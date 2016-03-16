@@ -225,6 +225,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=1m \
     dalvik.vm.heapmaxfree=4m \
+	ro.sys.fw.dex2oat_thread_count=2 \
 	dalvik.vm.dex2oat-flags=--no-watch-dog
 
 
