@@ -5,6 +5,6 @@ if [ -f /cache/trim ]; then
 /system/xbin/fstrim /system
 /system/xbin/fstrim /cache
 /system/xbin/fstrim /data
-/system/xbin/fstrim /preload
+# /system/xbin/fstrim /preload
 rm /cache/trim
 fi;
