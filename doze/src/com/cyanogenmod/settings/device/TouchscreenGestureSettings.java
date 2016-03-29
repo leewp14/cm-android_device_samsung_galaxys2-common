@@ -101,4 +101,3 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
         }
     };
 }
-
