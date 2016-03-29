@@ -35,6 +35,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/configs/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml
 
+# Check if user want to trim free space on reboot
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/95runtrim:system/etc/init.d/95runtrim
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/tinyalsa-audio.xml:system/etc/tinyalsa-audio.xml \
