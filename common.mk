@@ -26,10 +26,7 @@ PRODUCT_COPY_FILES := \
 
 # Recovery rootdir
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/init.recovery.smdk4210.rc:root/init.recovery.smdk4210.rc \
-	$(COMMON_PATH)/rootdir/twrp.fstab:recovery/root/twrp.fstab \
-	$(COMMON_PATH)/rootdir/twrp.fstab:root/twrp.fstab
-
+    $(COMMON_PATH)/rootdir/init.recovery.smdk4210.rc:root/init.recovery.smdk4210.rc
 
 # Netflix hack
 PRODUCT_COPY_FILES += \
