@@ -76,6 +76,14 @@ on post-fs-data
     chown gps system /dev/ttySAC1
     chmod 0660 /dev/ttySAC1
 
+    restorecon /sys/class/sec/gps/export
+    restorecon /sys/class/sec/gps/GPS_PWR_EN/value
+    restorecon /sys/class/sec/gps/GPS_PWR_EN/direction
+
+    write /data/.cid.info 0
+    restorecon /data/.cid.info
+    restorecon /data/ISP_CV
+
     # give system access to wpa_supplicant.conf for backup and restore
     mkdir /data/misc/wifi 0770 wifi wifi
     chmod 0770 /data/misc/wifi
@@ -349,6 +357,7 @@ service cpboot-daemon /sbin/cbd -d -p 8
     class main
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r
+    seclabel u:r:cpboot-daemon:s0
 
 service mdnsd /system/bin/mdnsd
     class main

@@ -16,8 +16,10 @@ allow cpboot-daemon radio_prop:property_service set;
 allow cpboot-daemon self:capability { setuid };
 allow cpboot-daemon sysfs_radio:file { read write open };
 allow cpboot-daemon usbfs:dir search;
-
+allow cpboot-daemon self:capability dac_override;
+allow cpboot-daemon cbd_device:chr_file create_file_perms;
 
 # FIX ME
 # allow cpboot-daemon usbfs:filesystem mount;
 # allow cpboot-daemon self:capability { mknod };
+
