@@ -1,0 +1,4 @@
+-keep class com.cyanogenmod.settings.device.* {
+  *;
+}
+
