@@ -223,16 +223,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.isUsbOtgEnabled=true
 
 # $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-# $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
-# Custom dalvik.vm values
+
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=6m \
-    dalvik.vm.heapgrowthlimit=64m \
-    dalvik.vm.heapsize=160m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=1m \
-    dalvik.vm.heapmaxfree=4m \
 	ro.sys.fw.dex2oat_thread_count=2 \
 	dalvik.vm.dex2oat-flags=--no-watch-dog
 
