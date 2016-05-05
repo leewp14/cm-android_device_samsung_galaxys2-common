@@ -181,4 +181,6 @@
          audio routing, FORCE_BT_CAR_DOCK, with an analog dock, FORCE_ANALOG_DOCK. -->
     <bool name="config_forceAnalogCarDock">true</bool>
 
+	<bool name="config_enableAutoPowerModes">true</bool>
+
 </resources>
