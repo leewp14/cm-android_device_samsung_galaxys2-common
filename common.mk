@@ -93,10 +93,6 @@ PRODUCT_PACKAGES += \
     charger \
     charger_res_images
 
-# Gello browser
-PRODUCT_PACKAGES += \
-	Gello
-
 # MFC API
 PRODUCT_PACKAGES += \
     libsecmfcapi
