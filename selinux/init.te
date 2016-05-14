@@ -1,6 +1,6 @@
 allow init self:capability sys_module;
 allow init wpa_socket:unix_dgram_socket { bind create };
-allow init init:process { execmem };
+allow init init:process { execmem setcurrent };
 allow init init:tcp_socket { create };
 allow init app_data_file:file { getattr relabelfrom };
 allow init vfat:dir { setattr };
