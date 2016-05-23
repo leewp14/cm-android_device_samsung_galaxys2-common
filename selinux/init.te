@@ -9,6 +9,7 @@ allow init tmpfs:lnk_file create;
 allow init sysfs_sensor:lnk_file { setattr read };
 
 allow init rild:process noatsecure;
+allow init debugfs:dir mounton;
 
 domain_trans(init, rootfs, glgps)
 domain_trans(init, rootfs, cpboot-daemon)
