@@ -76,6 +76,10 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudiohw_legacy
 
+# Gello Browser
+# PRODUCT_PACKAGES += \
+#	Gello
+
 # HAL
 PRODUCT_PACKAGES += \
     camera.smdk4210 \
