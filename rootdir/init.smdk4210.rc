@@ -457,9 +457,9 @@ service bugreport /system/bin/dumpstate -d -p -B \
 
 on property:init.svc.bootanim=stopped
 # Make the lmk values rw to get some adjustment apps working and adjust the default values to prevent killing foreground apps to early
-	chmod 0664 /sys/module/lowmemorykiller/parameters/adj
-	chmod 0664 /sys/module/lowmemorykiller/parameters/minfree
-	write /sys/module/lowmemorykiller/parameters/minfree 7168,10240,18432,23040,26624,32000
+#	chmod 0664 /sys/module/lowmemorykiller/parameters/adj
+#	chmod 0664 /sys/module/lowmemorykiller/parameters/minfree
+#	write /sys/module/lowmemorykiller/parameters/minfree 7168,10240,18432,23040,26624,32000
 
 on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/scheduler row
