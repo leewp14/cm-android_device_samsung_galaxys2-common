@@ -57,7 +57,7 @@ BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0 androidboot.hardwa
 EXTENDED_FONT_FOOTPRINT := true
 
 # Memory management
-MALLOC_IMPL := dlmalloc
+MALLOC_SVELTE := true
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
