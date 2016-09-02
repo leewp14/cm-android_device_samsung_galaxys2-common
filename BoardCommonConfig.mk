@@ -52,6 +52,7 @@ BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0 androidboot.hardware=smdk4210 androidboot.selinux=permissive
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
