@@ -17,6 +17,8 @@
 
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
+
+I_WANT_A_QUAIL_STAR := true
 WITH_DEXPREOPT := false
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_LEGACY_MMAP := true
