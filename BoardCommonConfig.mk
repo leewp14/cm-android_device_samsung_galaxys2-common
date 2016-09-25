@@ -17,6 +17,10 @@
 
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
+
+
+LIBART_IMG_BASE := 0x30000000
+
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_LEGACY_MMAP := true
 TARGET_CPU_ABI := armeabi-v7a
