@@ -76,9 +76,9 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudiohw_legacy
 
-# Gello Browser
-# PRODUCT_PACKAGES += \
-#	Gello
+# Browser
+PRODUCT_PACKAGES += \
+	Browser
 
 # HAL
 PRODUCT_PACKAGES += \
