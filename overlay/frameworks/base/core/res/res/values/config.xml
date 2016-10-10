@@ -175,7 +175,7 @@
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
 
     <!-- Boolean to enable stk functionality on Samsung phones -->
- <!-- temp removed   <bool name="config_samsung_stk">true</bool> -->
+    <bool name="config_samsung_stk">true</bool>
 
     <!-- Control whether a car dock event should override the default bluetooth
          audio routing, FORCE_BT_CAR_DOCK, with an analog dock, FORCE_ANALOG_DOCK. -->
