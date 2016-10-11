@@ -130,6 +130,10 @@ PRODUCT_COPY_FILES += \
 # we overlay this file (see netflix hack above)
 #   frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
+# Encoder
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true
+
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
