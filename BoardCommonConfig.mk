@@ -61,7 +61,10 @@ BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0 androidboot.hardware=smdk4210 androidboot.selinux=permissive
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+
 KERNEL_HAS_FINIT_MODULE := false
 
 # Include an expanded selection of fonts
