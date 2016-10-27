@@ -39,7 +39,13 @@
 
 # GPS
 /dev/ttySAC1                            u:object_r:gps_device:s0
-/system/bin/gps_daemon.sh               u:object_r:glgps_exec:s0
+/system/bin/gpsd                        u:object_r:gpsd_exec:s0
+/data/gps/gps\.interface\.pipe\.to_gpsd	u:object_r:gps_data_file:s0
+/data/gps/gps\.interface\.pipe\.to_jni	u:object_r:gps_data_file:s0
+/data/gps/ctrlpipe	                    u:object_r:gps_data_file:s0
+/data/gps/.gpslogd.pipe	                u:object_r:gps_data_file:s0
+/data/gps/nmeapipe	                    u:object_r:gps_data_file:s0
+/system/lib/hw/gps.exynos4.so           u:object_r:gps_data_file:s0
 
 # Sensors
 /dev/akm8975                            u:object_r:sensors_device:s0

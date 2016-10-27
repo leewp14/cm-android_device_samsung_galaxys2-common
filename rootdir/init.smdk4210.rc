@@ -83,7 +83,7 @@ on post-fs-data
 # GPS
     mkdir /data/gps
     chown gps system /data/gps
-    chmod 770 /data/gps
+    chmod 771 /data/gps
     write /sys/class/sec/gps/GPS_PWR_EN/export 162
     write /sys/class/sec/gps/GPS_PWR_EN/value 0
     write /sys/class/sec/gps/GPS_PWR_EN/direction out
