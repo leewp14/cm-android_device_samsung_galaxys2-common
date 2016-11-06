@@ -13,7 +13,6 @@ on init
     mkdir /mnt/.lfs 0755 root root
 
     # for backwards compatibility
-#   symlink /sdcard /mnt/sdcard
    symlink /sdcard /storage/sdcard
    symlink /sdcard /storage/sdcard0
 
