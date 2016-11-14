@@ -8,5 +8,5 @@ allow vold blkid_exec:file { getattr execute read open execute_no_trans };
 
 allow vold log_device:chr_file { write open };
 
-allow vold efs_device_file:dir rw_file_perms;
+allow vold efs_device_file:dir rw_dir_perms;
 allow vold efs_device_file:file rw_file_perms;
