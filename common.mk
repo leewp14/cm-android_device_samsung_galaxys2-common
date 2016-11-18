@@ -227,6 +227,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.dalvik.multithread=true \
 	ro.sys.fw.dex2oat_thread_count=2 \
 	dalvik.vm.dex2oat-flags=--no-watch-dog
 
