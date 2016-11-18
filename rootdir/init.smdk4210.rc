@@ -141,6 +141,10 @@ on post-fs-data
     chmod 0600 /dev/pn544
     chown nfc nfc /dev/pn544
 
+# See http://www.netmite.com/android/mydroid/2.0/dalvik/docs/embedded-vm-control.html
+# Disable extended JNI checks, should speed things up
+    setprop dalvik.vm.checkjni false
+
 # setup for alsa snd device
     chmod 0770 /dev/snd/pcmC0D0c
     chmod 0770 /dev/snd/pcmC0D0p
