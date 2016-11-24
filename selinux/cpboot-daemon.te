@@ -25,4 +25,3 @@ allow cpboot-daemon cbd_device:chr_file create_file_perms;
 # FIX ME
 # allow cpboot-daemon usbfs:filesystem mount;
 # allow cpboot-daemon self:capability { mknod };
-
