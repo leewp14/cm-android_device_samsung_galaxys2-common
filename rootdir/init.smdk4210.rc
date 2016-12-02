@@ -5,7 +5,7 @@ on early-init
     write /sys/block/mmcblk0/queue/scheduler noop
 
 on init
-    export LD_SHIM_LIBS /system/lib/libsec-ril.so|libsamsung_symbols.so
+    export LD_SHIM_LIBS "/system/lib/libsec-ril.so|libsamsung_symbols.so:/system/vendor/lib/libwvm.so|libwvm_shim.so"
 
     mkdir /efs 0771 radio system
     mkdir /preload 0771 system system

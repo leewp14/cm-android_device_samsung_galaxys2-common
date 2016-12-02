@@ -141,6 +141,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     libsecril-shim
 
+# Widevine
+PRODUCT_PACKAGES += \
+    libwvm_shim
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungExynos4RIL \
     mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1 \
