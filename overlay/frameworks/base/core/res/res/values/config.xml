@@ -181,8 +181,6 @@
          audio routing, FORCE_BT_CAR_DOCK, with an analog dock, FORCE_ANALOG_DOCK. -->
  <!-- temp removed    <bool name="config_forceAnalogCarDock">true</bool> -->
 
-	<bool name="config_enableAutoPowerModes">true</bool>
-
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
          Here are a few of them:
