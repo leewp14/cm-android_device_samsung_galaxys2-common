@@ -39,6 +39,6 @@
     <integer name="doze_pulse_delay_in_pickup">200</integer>
 
     <!-- Allow Flashlight service to use wakelock -->
-    <bool name="flashlight_use_wakelock">true</bool>
+    <bool name="config_useWakelockForFlashlight">true</bool>
 </resources>
 
