@@ -1,4 +1,4 @@
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,16 +14,13 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_POWERHAL_VARIANT),ondemand)
-
 include $(CLEAR_VARS)
 
+LOCAL_CFLAGS += -DUSE_PEGASUSQ_BOOSTING
+LOCAL_SRC_FILES := power.c
+LOCAL_SHARED_LIBRARIES := liblog libcutils
 LOCAL_MODULE := power.$(TARGET_BOOTLOADER_BOARD_NAME)
 LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_SHARED_LIBRARIES := liblog libcutils
-LOCAL_SRC_FILES := power.c
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
-
-endif

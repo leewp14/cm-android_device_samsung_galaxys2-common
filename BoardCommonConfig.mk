@@ -190,8 +190,5 @@ BOARD_USES_FULL_RECOVERY_IMAGE := true
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.exynos4
 
-# PowerHAL
-TARGET_POWERHAL_VARIANT := ondemand
-
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/galaxys2-common/BoardConfigVendor.mk
