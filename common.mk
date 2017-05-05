@@ -78,7 +78,7 @@ PRODUCT_PACKAGES += \
 
 # Browser
 PRODUCT_PACKAGES += \
-	Browser
+	Jelly
 
 # HAL
 PRODUCT_PACKAGES += \
