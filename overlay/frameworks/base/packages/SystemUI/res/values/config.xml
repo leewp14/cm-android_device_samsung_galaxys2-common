@@ -37,5 +37,8 @@
 
     <!-- Doze: pulse parameter - delay to wait for the screen to wake up after a pickup -->
     <integer name="doze_pulse_delay_in_pickup">200</integer>
+
+    <!-- Allow Flashlight service to use wakelock -->
+    <bool name="config_useWakelockForFlashlight">true</bool>
 </resources>
 
