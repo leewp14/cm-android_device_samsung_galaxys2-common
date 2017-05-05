@@ -199,5 +199,5 @@
     <bool name="config_sim_phonebook_batch_operation">false</bool>
 
     <!-- Allow Flashlight service to use wakelock -->
-    <bool name="config_useWakeLockForFlashlight">true</bool>
+    <bool name="config_useWakelockForFlashlight">true</bool>
 </resources>
