@@ -29,10 +29,11 @@
 #include <unistd.h>
 
 #define LOG_NDEBUG 0
-#define DEBUG 1
+#define DEBUG 0
 #include <utils/Log.h>
 
 #include "power.h"
+
 
 #define PEGASUSQ_PATH "/sys/devices/system/cpu/cpufreq/pegasusq/"
 #define MINMAX_CPU_PATH "/sys/power/"
@@ -188,7 +189,10 @@ static void set_power_profile(int profile) {
         WRITE_PEGASUSQ_PARAM(profile, hotplug_rq_2_0);
         WRITE_MINMAX_CPU(cpufreq_max_limit, profiles[profile].max_freq);
         WRITE_MINMAX_CPU(cpufreq_min_limit, profiles[profile].min_freq);
+        WRITE_PEGASUSQ_PARAM(profile, freq_step);
         WRITE_PEGASUSQ_PARAM(profile, up_threshold);
+        WRITE_PEGASUSQ_PARAM(profile, up_threshold_at_min_freq);
+        WRITE_PEGASUSQ_PARAM(profile, freq_for_responsiveness);
         WRITE_PEGASUSQ_PARAM(profile, down_differential);
         WRITE_PEGASUSQ_PARAM(profile, min_cpu_lock);
         WRITE_PEGASUSQ_PARAM(profile, max_cpu_lock);
@@ -216,7 +220,6 @@ static void set_power_profile(int profile) {
     current_power_profile = profile;
 
     if (DEBUG) ALOGV("%s: %d", __func__, profile);
-
 }
 
 static void boost(long boost_time) {
@@ -224,8 +227,14 @@ static void boost(long boost_time) {
     if (is_vsync_active || !check_governor_pegasusq()) return;
     if (boost_time == -1) {
         sysfs_write_int(PEGASUSQ_PATH "boost_lock_time", -1);
+#ifdef LOG_NDEBUG
+        ALOGV("%s: (param=boost_time, value=%d)", __func__, -1);
+#endif
     } else {
         sysfs_write_long(PEGASUSQ_PATH "boost_lock_time", boost_time);
+#ifdef LOG_NDEBUG
+        ALOGV("%s: (param=boost_time, value=%ld)", __func__, boost_time);
+#endif
     }
 #endif
 }
@@ -234,10 +243,13 @@ static void end_boost() {
 #ifdef USE_PEGASUSQ_BOOSTING
     if (is_vsync_active || !check_governor_pegasusq()) return;
     sysfs_write_int(PEGASUSQ_PATH "boost_lock_time", 0);
+#ifdef LOG_NDEBUG
+    ALOGV("%s: (param=boost_time, value=%d)", __func__, 0);
+#endif
 #endif
 }
 
-static void set_low_power(bool low_power) {
+static void set_power(bool low_power) {
     if (!is_profile_valid(current_power_profile)) {
         if (DEBUG) ALOGV("%s: current_power_profile not set yet", __func__);
         return;
@@ -249,14 +261,16 @@ static void set_low_power(bool low_power) {
 
     if (low_power) {
         end_boost();
-
         WRITE_LOW_POWER_PARAM(current_power_profile, hotplug_freq_1_1);
         WRITE_LOW_POWER_PARAM(current_power_profile, hotplug_freq_2_0);
         WRITE_LOW_POWER_PARAM(current_power_profile, hotplug_rq_1_1);
         WRITE_LOW_POWER_PARAM(current_power_profile, hotplug_rq_2_0);
         WRITE_MINMAX_CPU(cpufreq_max_limit, profiles_low_power[current_power_profile].max_freq);
         WRITE_MINMAX_CPU(cpufreq_min_limit, profiles_low_power[current_power_profile].min_freq);
+        WRITE_LOW_POWER_PARAM(current_power_profile, freq_step);
         WRITE_LOW_POWER_PARAM(current_power_profile, up_threshold);
+        WRITE_LOW_POWER_PARAM(current_power_profile, up_threshold_at_min_freq);
+        WRITE_LOW_POWER_PARAM(current_power_profile, freq_for_responsiveness);
         WRITE_LOW_POWER_PARAM(current_power_profile, down_differential);
         WRITE_LOW_POWER_PARAM(current_power_profile, min_cpu_lock);
         WRITE_LOW_POWER_PARAM(current_power_profile, max_cpu_lock);
@@ -271,7 +285,10 @@ static void set_low_power(bool low_power) {
         WRITE_PEGASUSQ_PARAM(current_power_profile, hotplug_rq_2_0);
         WRITE_MINMAX_CPU(cpufreq_max_limit, profiles[current_power_profile].max_freq);
         WRITE_MINMAX_CPU(cpufreq_min_limit, profiles[current_power_profile].min_freq);
+        WRITE_PEGASUSQ_PARAM(current_power_profile, freq_step);
         WRITE_PEGASUSQ_PARAM(current_power_profile, up_threshold);
+        WRITE_PEGASUSQ_PARAM(current_power_profile, up_threshold_at_min_freq);
+        WRITE_PEGASUSQ_PARAM(current_power_profile, freq_for_responsiveness);
         WRITE_PEGASUSQ_PARAM(current_power_profile, down_differential);
         WRITE_PEGASUSQ_PARAM(current_power_profile, min_cpu_lock);
         WRITE_PEGASUSQ_PARAM(current_power_profile, max_cpu_lock);
@@ -280,7 +297,6 @@ static void set_low_power(bool low_power) {
         WRITE_PEGASUSQ_PARAM(current_power_profile, io_is_busy);
         WRITE_PEGASUSQ_PARAM(current_power_profile, boost_freq);
         WRITE_PEGASUSQ_PARAM(current_power_profile, boost_mincpus);
-
         is_low_power = false;
     }
 }
@@ -330,7 +346,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
     if (!check_governor_pegasusq()) return;
     if (DEBUG) ALOGV("%s: setting interactive => %d", __func__, on);
     pthread_mutex_lock(&lock);
-    set_low_power(!on);
+    set_power(!on);
     pthread_mutex_unlock(&lock);
 }
 
@@ -393,11 +409,11 @@ static void power_hint(__attribute__((unused)) struct power_module *module, powe
             if (DEBUG) ALOGV("%s: interaction", __func__);
             if (data) {
                 val = *(int32_t *)data;
-                if (val > 0) {
+                if (data) {
                     boost(val * US_TO_NS);
+                } else {
+                    boost(profiles[current_power_profile].interaction_boost_time);
                 }
-            } else {
-                boost(profiles[current_power_profile].interaction_boost_time);
             }
             break;
         case POWER_HINT_LAUNCH:
@@ -459,4 +475,3 @@ struct power_module HAL_MODULE_INFO_SYM = {
     .powerHint = power_hint,
     .getFeature = power_get_feature
 };
-
