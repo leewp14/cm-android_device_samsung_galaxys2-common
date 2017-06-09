@@ -78,8 +78,8 @@ on fs
 on charger
 
 # CPU Frequency Governor
-    write /sys/devices/system/cpu/cpufreq/pegasusq/min_cpu_lock 100000
-    write /sys/devices/system/cpu/cpufreq/pegasusq/max_cpu_lock 100000
+    write /sys/devices/system/cpu/cpufreq/pegasusq/min_cpu_lock 200000
+    write /sys/devices/system/cpu/cpufreq/pegasusq/max_cpu_lock 200000
 
 # EHCI runtime enable for LPA
     write /sys/devices/platform/s5p-ehci/power/control auto
