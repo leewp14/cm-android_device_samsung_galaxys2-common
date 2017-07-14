@@ -1,6 +1,8 @@
 /*
- * Copyright (C) 2016 The CyanogenMod Project <http://www.cyanogenmod.org>
- *           (C) 2017 The LineageOS Project
+ * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2014-2015 Andreas Schneider <asn@cryptomilk.org>
+ * Copyright (C) 2014-2015 Christopher N. Hesse <raymanfx@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,6 +198,7 @@ static void set_power_profile(int profile) {
         WRITE_PEGASUSQ_PARAM(profile, down_differential);
         WRITE_PEGASUSQ_PARAM(profile, min_cpu_lock);
         WRITE_PEGASUSQ_PARAM(profile, max_cpu_lock);
+        WRITE_PEGASUSQ_PARAM(profile, cpu_up_rate);
         WRITE_PEGASUSQ_PARAM(profile, cpu_down_rate);
         WRITE_PEGASUSQ_PARAM(profile, sampling_rate);
         WRITE_PEGASUSQ_PARAM(profile, io_is_busy);
