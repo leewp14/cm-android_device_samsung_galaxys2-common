@@ -3,6 +3,7 @@
  * Copyright (C) 2014 The CyanogenMod Project
  * Copyright (C) 2014-2015 Andreas Schneider <asn@cryptomilk.org>
  * Copyright (C) 2014-2015 Christopher N. Hesse <raymanfx@gmail.com>
+ * Copyright (C) 2017 Dominggoes Isakh <drjisakh@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -423,22 +424,11 @@ static void power_hint(__attribute__((unused)) struct power_module *module, powe
             if (DEBUG) ALOGV("%s: launch", __func__);
             boost(profiles[current_power_profile].launch_boost_time);
             break;
-/*       case POWER_HINT_VSYNC:
-            if (data) {
-                ALOGV("%s: vsync", __func__);
-                boost(-1);
-                is_vsync_active = true;
-            } else {
-                is_vsync_active = false;
-                end_boost();
-            }
-            break;*/
         case POWER_HINT_CPU_BOOST:
             if (DEBUG) ALOGV("%s: cpu_boost", __func__);
             boost((*(int32_t *)data) * US_TO_NS);
             break;
         default:
-            //ALOGV("%s: not handled", __func__);
             break;
     }
 
