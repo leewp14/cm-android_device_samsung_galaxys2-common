@@ -31,8 +31,8 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_NEEDS_EXYNOS4_ENHANCEMENTS := true
 # EXYNOS4210_ENHANCEMENTS := true
 # EXYNOS4_ENHANCEMENTS := true
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
+# TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
+# TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 # BOARD_GLOBAL_CFLAGS += -DEXYNOS4_ENHANCEMENTS
 # BOARD_GLOBAL_CFLAGS += -DEXYNOS4210_ENHANCEMENTS
