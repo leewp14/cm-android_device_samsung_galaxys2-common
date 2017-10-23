@@ -69,7 +69,7 @@ PRODUCT_PACKAGES += \
 
 # Audio Packages
 PRODUCT_PACKAGES += \
-    AdvancedDisplay \
+#    AdvancedDisplay \
     audio.primary.exynos4 \
     audio.a2dp.default \
     audio.r_submix.default \
@@ -177,8 +177,8 @@ PRODUCT_PACKAGES += \
     librs_jni
 
 # SamsungDoze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+# PRODUCT_PACKAGES += \
+#     SamsungDoze
 
 # Wifi
 PRODUCT_PACKAGES += \

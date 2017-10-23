@@ -28,13 +28,14 @@ TARGET_ARCH_VARIANT_CPU := cortex-a9
 TARGET_CPU_VARIANT := cortex-a9
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
-EXYNOS4210_ENHANCEMENTS := true
-EXYNOS4_ENHANCEMENTS := true
+TARGET_NEEDS_EXYNOS4_ENHANCEMENTS := true
+# EXYNOS4210_ENHANCEMENTS := true
+# EXYNOS4_ENHANCEMENTS := true
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
-BOARD_GLOBAL_CFLAGS += -DEXYNOS4_ENHANCEMENTS
-BOARD_GLOBAL_CFLAGS += -DEXYNOS4210_ENHANCEMENTS
+# BOARD_GLOBAL_CFLAGS += -DEXYNOS4_ENHANCEMENTS
+# BOARD_GLOBAL_CFLAGS += -DEXYNOS4210_ENHANCEMENTS
 
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
@@ -117,10 +118,10 @@ BOARD_USE_TINYALSA_AUDIO := true
 BOARD_USE_YAMAHA_MC1N2_AUDIO := true
 
 # RIL
-BOARD_PROVIDES_LIBRIL := true
+# BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := xmm6260
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2-common/include
-BOARD_RIL_CLASS := ../../../device/samsung/galaxys2-common/ril
+# BOARD_RIL_CLASS := ../../../device/samsung/galaxys2-common/ril
 BOARD_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 
 # Camera
@@ -157,7 +158,7 @@ BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 BOARD_CUSTOM_BT_CONFIG := device/samsung/galaxys2-common/bluetooth/vnd_smdk4210.txt
 
 # Selinux
-BOARD_SEPOLICY_DIRS += device/samsung/galaxys2-common/selinux
+# BOARD_SEPOLICY_DIRS += device/samsung/galaxys2-common/selinux
 
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/galaxys2-common/recovery/recovery_keys.c
