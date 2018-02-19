@@ -420,7 +420,7 @@ static void power_hint(__attribute__((unused)) struct power_module *module, powe
                 }
             }
             break;
-        case POWER_HINT_LAUNCH:
+        case POWER_HINT_LAUNCH_BOOST:
             if (DEBUG) ALOGV("%s: launch", __func__);
             boost(profiles[current_power_profile].launch_boost_time);
             break;
