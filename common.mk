@@ -60,8 +60,7 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES := \
-    com.android.future.usb.accessory \
-    SamsungServiceMode
+    com.android.future.usb.accessory
 
 # Samsung symbols
 PRODUCT_PACKAGES += \
