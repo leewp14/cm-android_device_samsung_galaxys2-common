@@ -1,2 +1,0 @@
-allow fsck_untrusted swap_block_device:blk_file getattr;
-

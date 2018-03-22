@@ -40,7 +40,8 @@ LOCAL_SHARED_LIBRARIES := \
 	libexpat \
 	libtinyalsa \
 	libaudioutils \
-	libdl
+	libdl \
+        liblog
 
 ifeq ($(strip $(BOARD_USE_YAMAHA_MC1N2_AUDIO)),true)
 	LOCAL_CFLAGS += -DYAMAHA_MC1N2_AUDIO -DYAMAHA_MC1N2_AUDIO_DEVICE=\"galaxys2\"
@@ -51,8 +52,9 @@ endif
 LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_TAGS := optional
 
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE := audio.primary.$(TARGET_BOARD_PLATFORM)
-LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 
 include $(BUILD_SHARED_LIBRARY)
 

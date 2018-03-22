@@ -30,11 +30,7 @@ PRODUCT_COPY_FILES += \
 
 # Netflix hack
 PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/configs/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml
-
-# Check if user want to trim free space on reboot
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/95runtrim:system/etc/init.d/95runtrim
+    $(COMMON_PATH)/configs/98netflix:system/etc/init.d/98netflix
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -49,7 +45,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=30
+    wifi.supplicant_scan_interval=30 \
+    net.tethering.noprovisioning=true
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 
@@ -62,13 +59,21 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES := \
     com.android.future.usb.accessory
 
-# Samsung symbols
+# Legacy RIL
 PRODUCT_PACKAGES += \
-    libsamsung_symbols
+    libsamsung_symbols \
+    libsecril-shim
+
+# SamsungPowerHAL
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service \
+    power.smdk4210
 
 # Audio Packages
 PRODUCT_PACKAGES += \
-#    AdvancedDisplay \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
     audio.primary.exynos4 \
     audio.a2dp.default \
     audio.r_submix.default \
@@ -81,15 +86,46 @@ PRODUCT_PACKAGES += \
 
 # HAL
 PRODUCT_PACKAGES += \
-    camera.smdk4210 \
+    AdvancedDisplay \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.bluetooth@1.0-impl \
+    libbt-vendor \
     gralloc.exynos4 \
     hwcomposer.exynos4 \
     libnetcmdiface \
-    lights.exynos4 \
+    android.hardware.light@2.0-impl \
+    lights.smdk4210 \
     libhwconverter \
     libs5pjpeg \
     libfimg \
     libsecion
+
+#Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
+
+#Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl-legacy \
+    camera.device@1.0-impl-legacy \
+    camera.smdk4210 \
+    Snap \
+    libstagefright_shim
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/mediaserver.rc:system/etc/init/mediaserver.rc
+
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
+
+
+# HIDL manifest
+PRODUCT_COPY_FILES += \
+    device/samsung/galaxys2-common/manifest.xml:system/vendor/manifest.xml
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -103,7 +139,6 @@ PRODUCT_PACKAGES += \
 # OMX
 PRODUCT_PACKAGES += \
     libstagefrighthw \
-	libstagefright_soft_flacdec \
     libseccscapi \
     libsecbasecomponent \
     libsecosal \
@@ -117,29 +152,19 @@ PRODUCT_PACKAGES += \
     libSEC_OMX_Venc \
     libOMX.SEC.M4V.Encoder
 
-# Power
-PRODUCT_PACKAGES += \
-    power.smdk4210
-
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(COMMON_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-# we overlay this file (see netflix hack above)
-#   frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     ro.zygote.disable_gl_preload=true \
     ro.bq.gpu_to_cpu_unsupported=1 \
-    debug.hwui.render_dirty_regions=false \
-    ro.egl.destroy_after_detach=true
-
-# RIL
-PRODUCT_PACKAGES += \
-    libsecril-shim
+    debug.hwui.render_dirty_regions=false
 
 # Widevine
 PRODUCT_PACKAGES += \
@@ -149,8 +174,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungExynos4RIL \
     mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1 \
     ro.telephony.call_ring.multiple=false \
-    ro.telephony.call_ring.delay=3000 \
-	ro.telephony.mms_data_profile=5
+    ro.telephony.call_ring.delay=3000
+
+# Services
+PRODUCT_PROPERTY_OVERRIDES += \
+    config.disable_atlas=true
+
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -175,12 +206,10 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni
 
-# SamsungDoze
-# PRODUCT_PACKAGES += \
-#     SamsungDoze
-
 # Wifi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    wificond \
     hostapd \
     libwpa_client \
     macloader \
@@ -226,9 +255,6 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 # $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.dex2oat-flags=--no-watch-dog \
-	ro.sys.fw.dex2oat_thread_count=2
 
 # Include exynos4 platform specific parts
 TARGET_HAL_PATH := hardware/samsung/exynos4/hal
@@ -237,3 +263,9 @@ $(call inherit-product, hardware/samsung/exynos4210.mk)
 
 # Include non-open-source parts
 $(call inherit-product, vendor/samsung/galaxys2-common/common-vendor.mk)
+
+# Build GO
+$(call inherit-product, build/target/product/go_defaults_512.mk)
+
+# Include debugging props
+$(call inherit-product, device/samsung/galaxys2-common/system_prop_debug.mk)
