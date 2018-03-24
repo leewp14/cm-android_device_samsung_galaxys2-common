@@ -64,6 +64,10 @@ PRODUCT_PACKAGES += \
     libsamsung_symbols \
     libsecril-shim
 
+# Legacy GPS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
+
 # SamsungPowerHAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
