@@ -67,9 +67,6 @@ endif
 TARGET_LD_SHIM_LIBS := \
     /system/lib/libsec-ril.so|libsamsung_symbols.so
 
-# Bionic
-LINKER_FORCED_SHIM_LIBS := /system/lib/libc.so|libc-shim.so
-
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
 
 # Generate debug info
