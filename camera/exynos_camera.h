@@ -110,7 +110,6 @@ struct exynos_camera_params {
 	char *focus_distances;
 	char *focus_areas;
 	int max_num_focus_areas;
-        char *touch_af_aec;
 
 	int zoom_supported;
 	int smooth_zoom_supported;
@@ -212,7 +211,6 @@ struct exynos_camera {
 	pthread_mutex_t preview_mutex;
 	pthread_mutex_t preview_lock_mutex;
 	int preview_thread_running;
-	int preview_thread_started;
 
 	int preview_enabled;
 	struct preview_stream_ops *preview_window;
@@ -225,9 +223,6 @@ struct exynos_camera {
 	pthread_mutex_t recording_mutex;
 
 	int recording_enabled;
-	int recording_msg_start;
-	int recording_msg_start_result;
-	int recording_msg_stop;
 	camera_memory_t *recording_memory;
 	int recording_buffers_count;
 
@@ -306,9 +301,6 @@ int exynos_camera_picture_start(struct exynos_camera *exynos_camera);
 int exynos_camera_preview(struct exynos_camera *exynos_camera);
 int exynos_camera_preview_start(struct exynos_camera *exynos_camera);
 void exynos_camera_preview_stop(struct exynos_camera *exynos_camera);
-
-int exynos_camera_recording_start(struct exynos_camera *exynos_camera);
-void exynos_camera_recording_stop(struct exynos_camera *exynos_camera);
 
 /*
  * EXIF
