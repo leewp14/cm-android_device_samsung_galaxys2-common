@@ -27,7 +27,7 @@
 #include <ui/GraphicBufferMapper.h>
 #include <ui/GraphicBuffer.h>
 #include <ui/Rect.h>
-#include <hardware/gralloc.h>
+#include <include/gralloc.h>
 
 namespace android {
 
