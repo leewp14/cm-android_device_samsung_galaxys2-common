@@ -65,7 +65,7 @@ endif
 
 # Bionic
 TARGET_LD_SHIM_LIBS := \
-    /system/lib/libsec-ril.so|libsamsung_symbols.so:system/bin/surfaceflinger|libc-shim.so
+    /system/lib/libsec-ril.so|libsamsung_symbols.so:/system/vendor/lib/libwvm.so|libwvm_shim.so:system/bin/surfaceflinger|libc-shim.so
 
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
 
