@@ -190,4 +190,11 @@
     <!-- Dream of notifications -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
     <bool name="config_dozeAfterScreenOff">true</bool>
+
+     <!-- Values for GPS configuration -->
+     <string-array translatable="false" name="config_gpsParameters">
+        <item>XTRA_SERVER_1=http://gllto.glpals.com/7day/glo/v2/latest/lto2.dat</item>
+        <item>XTRA_SERVER_2=http://gllto.glpals.com/4day/glo/v2/latest/lto2.dat</item>
+        <item>XTRA_SERVER_3=http://gllto.glpals.com/2day/glo/v2/latest/lto2.dat</item>
+     </string-array>
 </resources>
