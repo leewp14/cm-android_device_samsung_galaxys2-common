@@ -163,6 +163,10 @@ struct exynos_camera_preset exynos_camera_presets_galaxys2[] = {
 			.max_num_focus_areas = 0,
 
 			.zoom_supported = 0,
+			.smooth_zoom_supported = 0,
+			.zoom_ratios = "0",
+			.zoom = 0,
+			.max_zoom = 0,
 
 			.flash_mode = NULL,
 			.flash_mode_values = NULL,
