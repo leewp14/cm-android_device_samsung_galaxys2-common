@@ -17,6 +17,13 @@ COMMON_PATH := device/samsung/galaxys2-common
 
 DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlay
 
+# Art package manager options
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.dexopt.install=quicken \
+    pm.dexopt.bg-dexopt=speed-profile \
+    pm.dexopt.boot=verify \
+    pm.dexopt.first-boot=quicken
+
 # Rootdir
 PRODUCT_COPY_FILES := \
     $(COMMON_PATH)/rootdir/fstab.smdk4210:root/fstab.smdk4210 \
