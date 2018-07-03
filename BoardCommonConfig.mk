@@ -55,11 +55,6 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_ALLOWS_INVALID_PTHREAD := true
 
-# ART Dex pre-optimization
-WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-PRODUCT_DEX_PREOPT_BOOT_FLAGS += --compiler-filter=speed
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed
-
 # Bionic
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libsec-ril.so|libsamsung_symbols.so:/system/vendor/lib/libwvm.so|libwvm_shim.so
